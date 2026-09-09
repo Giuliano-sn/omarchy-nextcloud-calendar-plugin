@@ -904,7 +904,7 @@ Panel {
     owner: root.barIdentity
     bar: root.bar
     open: root.opened
-    centerOnBar: true
+    centerOnBar: false
     focusTarget: keyCatcher
     contentWidth: panel.fittedContentWidth(Style.space(600))
     contentHeight: panel.fittedContentHeight(Style.space(520))
@@ -1762,7 +1762,11 @@ Panel {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        height: root.showFooter ? Style.space(28) : 0
+        // Sized to the buttons' own natural height (which follows their
+        // font size) rather than a fixed guess — a fixed height shorter
+        // than the button's implicit height is what was clipping/squashing
+        // them.
+        height: root.showFooter ? footerRow.implicitHeight : 0
         contentWidth: footerRow.implicitWidth
         contentHeight: height
         clip: true
@@ -1780,6 +1784,7 @@ Panel {
             Button {
               required property var modelData
               text: modelData.displayName
+              fontSize: Style.font.body * 0.75
               selected: root.activeCalendarHref === modelData.href
               bordered: true
               foreground: root.contentForeground
