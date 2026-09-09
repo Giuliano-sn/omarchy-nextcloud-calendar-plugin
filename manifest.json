@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "giuliano.nextcloud-calendar",
+  "name": "Nextcloud Calendar",
+  "version": "1.0.0",
+  "author": "Giuliano",
+  "license": "MIT",
+  "description": "Shows your next Nextcloud Calendar appointment in the bar, with day, week, and month views",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Nextcloud Calendar",
+    "description": "Next appointment + agenda from Nextcloud Calendar (CalDAV)",
+    "category": "Info",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
