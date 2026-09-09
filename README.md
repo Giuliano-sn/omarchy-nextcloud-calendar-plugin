@@ -4,6 +4,8 @@ A bar plugin for [Omarchy](https://omarchy.org/) that shows your next Nextcloud
 Calendar appointment in the bar and lets you browse and edit your calendar
 (day / week / month) without leaving Hyprland.
 
+![Nextcloud Calendar week view popup in the Omarchy bar](preview.png)
+
 ## Features
 
 - Bar pill shows the time of your next upcoming appointment.
